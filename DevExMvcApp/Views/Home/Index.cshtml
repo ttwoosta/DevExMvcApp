@@ -22,6 +22,7 @@
     .GroupPanel(p => p.Visible(true))
     .Grouping(g => g.AutoExpandAll(false))
     .RemoteOperations(true)
+    .MasterDetail(c => c.Enabled(true))
     .Summary(s => s
         .TotalItems(totalItems => {
             totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
