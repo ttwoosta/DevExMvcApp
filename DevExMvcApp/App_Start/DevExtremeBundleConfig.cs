@@ -57,6 +57,8 @@ namespace DevExMvcApp {
                 .Include("~/Content/dx.common.css")
                 .Include("~/Content/dx.light.css");
 
+            // User's script
+            scriptBundle.Include("~/Scripts/User/*.js");
 
             bundles.Add(scriptBundle);
             bundles.Add(styleBundle);

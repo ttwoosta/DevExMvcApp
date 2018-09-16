@@ -193,6 +193,7 @@
     <Content Include="Scripts\localization\dx.messages.ru.js" />
     <Content Include="Scripts\localization\dx.messages.sv.js" />
     <Content Include="Scripts\localization\dx.messages.zh.js" />
+    <Content Include="Scripts\User\dd_edit-form-handlers.js" />
     <Content Include="Scripts\vectormap-data\africa.js" />
     <Content Include="Scripts\vectormap-data\canada.js" />
     <Content Include="Scripts\vectormap-data\eurasia.js" />
@@ -211,7 +212,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_GridViewPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
