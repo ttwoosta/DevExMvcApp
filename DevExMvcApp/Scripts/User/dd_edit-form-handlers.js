@@ -2,6 +2,8 @@
 
 function OnFormInitialized(e) {
     console.debug("Form initialized");
+    var dev = DevExpress.viz;
+    console.info(dev);
 }
 
 function OnFormContentReady(e) {
@@ -55,3 +57,4 @@ function CreateTextBox() {
 
     return cont;
 }
+

@@ -12,13 +12,34 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     @Styles.Render("~/Content/bundle")
-    @Styles.Render("~/Content/DevExtremeBundle")
+
+    <link rel="stylesheet" type="text/css" href="~/Content/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="/Content/dx.light.css" data-active="true" />
+    <link rel="dx-theme" data-theme="generic.dark" href="/Content/dx.dark.css" data-active="false" />
+    <link rel="dx-theme" data-theme="carmine" href="~/Content/dx.carmine.css" data-active="false" />
+    <link rel="dx-theme" data-theme="contrast" href="~/Content/dx.contrast.css" data-active="false" />
+    <link rel="dx-theme" data-theme="darkmoon" href="~/Content/dx.darkmoon.css" data-active="false" />
+    <link rel="dx-theme" data-theme="darkviolet" href="~/Content/dx.darkviolet.css" data-active="false" />
+    <link rel="dx-theme" data-theme="greenmist" href="~/Content/dx.greenmist.css" data-active="false" />
+    <link rel="dx-theme" data-theme="ios7" href="~/Content/dx.ios7.default.css" data-active="false" />
+    <link rel="dx-theme" data-theme="blue.dark" href="~/Content/dx.material.blue.dark.css" data-active="false" />
+    <link rel="dx-theme" data-theme="blue.light" href="~/Content/dx.material.blue.light.css" data-active="false" />
+    <link rel="dx-theme" data-theme="lime.dark" href="~/Content/dx.material.lime.dark.css" data-active="false" />
+    <link rel="dx-theme" data-theme="lime.light" href="~/Content/dx.material.lime.light.css" data-active="false" />
+    <link rel="dx-theme" data-theme="orange.dark" href="~/Content/dx.material.orange.dark.css" data-active="false" />
+    <link rel="dx-theme" data-theme="orange.light" href="~/Content/dx.material.orange.light.css" data-active="false" />
+    <link rel="dx-theme" data-theme="purple.dark" href="~/Content/dx.material.purple.dark.css" data-active="false" />
+    <link rel="dx-theme" data-theme="purple.light" href="~/Content/dx.material.purple.light.css" data-active="false" />
+    <link rel="dx-theme" data-theme="teal.dark" href="~/Content/dx.material.teal.dark.css" data-active="false" />
+    
+    <!-- DevExtreme scripts must go below the "dx-theme" links -->
+
     @Scripts.Render("~/Scripts/bundle")
     @Scripts.Render("~/Scripts/DevExtremeBundle")
-    
+
 </head>
 
-<body>
+<body class="dx-datagrid">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -41,7 +62,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div id="body-container" class="container">
         @RenderBody()
     </div>
 </body>
