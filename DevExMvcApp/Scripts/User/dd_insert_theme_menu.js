@@ -10,11 +10,6 @@ function windowLoaded() {
         //ko.applyBindings(viewModel);
         console.log("themes is ready");
     });
-
-    var currentTheme = localStorage.getItem("my_current_theme");
-    if (currentTheme != null) {
-        DevExpress.ui.themes.current(currentTheme);
-    }
     
     var theme_icon = "https://js.devexpress.com/ThemeBuilder/Content/Images/themes/generic-dark.svg";
 
@@ -39,11 +34,20 @@ function windowLoaded() {
         { text: "Teal (dark)", value: "teal.dark", image: theme_icon },
     ];
 
+    var currentThemeKey = localStorage.getItem("my_current_theme");
+    if (currentThemeKey == null)
+        currentThemeKey = themeObj[0].value;
+
+    // apply current theme
+    DevExpress.ui.themes.current(currentThemeKey);
+
     $("#themeDropDownBoxContainer").attr("style", "width: 170px; margin: 10px").dxDropDownBox({
 
-        value: themeObj[0],
+        value: currentThemeKey,
+        valueExpr: "value",
+        displayExpr: "text",
         dataSource: new DevExpress.data.DataSource({
-            store: new DevExpress.data.ArrayStore({ data: themeObj }),
+            store: new DevExpress.data.ArrayStore({ data: themeObj, key: "value" }),
         }),
         dropDownOptions: {
             title: "Themes",
@@ -51,17 +55,12 @@ function windowLoaded() {
             fullScreen: false,
             showCloseButton: true
         },
-
-        fieldTemplate: function (value, fieldElement) {
-            return $("<div />").dxTextBox({ value: value.text, readOnly: true });
-            //.$("<img />").attr("src", value.image)
-        },
         contentTemplate: function (e) {
             var $list = $("<div>").dxList({
                 dataSource: e.component.option("dataSource"),
                 selectionMode: "single",
                 onSelectionChanged: function (arg) {
-                    e.component.option("value", arg.addedItems[0]);
+                    e.component.option("value", arg.addedItems[0].value);
                     e.component.close();
 
                     var strTheme = arg.addedItems[0].value.toLowerCase();
