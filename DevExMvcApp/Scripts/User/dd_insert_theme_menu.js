@@ -16,6 +16,8 @@ function windowLoaded() {
     var themeObj = [
         { text: "Generic Light", value: "generic.light", image: theme_icon },
         { text: "Generic Dark", value: "generic.dark", image: theme_icon },
+        { text: "Blue Sky", value: "bluesky.light", image: theme_icon },
+        { text: "Blue Sky (dark)", value: "bluesky.dark", image: theme_icon },
         { text: "Green Mist", value: "greenmist", image: theme_icon },
         { text: "Carmine", value: "carmine", image: theme_icon },
         { text: "Contrast", value: "contrast", image: theme_icon },

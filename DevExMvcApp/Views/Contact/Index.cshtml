@@ -1,6 +1,8 @@
 ﻿
 <h2>Company Contact Information</h2>
 
+<div id="calendarContainer"></div>
+
 <script>
     // run the windowLoaded when the page loads
     window.addEventListener("load", windowLoaded);
@@ -8,5 +10,9 @@
     function windowLoaded() {
         $("#navbar ul li").removeClass("active");
         $("#contact-menu-item").addClass("active");
+
+        $("#calendarContainer").dxCalendar({
+            firstDayOfWeek: 1
+        });
     }
 </script>
