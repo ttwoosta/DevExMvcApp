@@ -14,7 +14,7 @@
     @Styles.Render("~/Content/bundle")
 
     <link rel="stylesheet" type="text/css" href="~/Content/dx.common.css" />
-    <link rel="dx-theme" data-theme="generic.light" href="/Content/dx.light.css" data-active="true" />
+    <link rel="dx-theme" data-theme="generic.light" href="/Content/dx.light.css" data-active="false" />
     <link rel="dx-theme" data-theme="generic.dark" href="/Content/dx.dark.css" data-active="false" />
     <link rel="dx-theme" data-theme="carmine" href="~/Content/dx.carmine.css" data-active="false" />
     <link rel="dx-theme" data-theme="contrast" href="~/Content/dx.contrast.css" data-active="false" />
@@ -30,8 +30,9 @@
     <link rel="dx-theme" data-theme="orange.light" href="~/Content/dx.material.orange.light.css" data-active="false" />
     <link rel="dx-theme" data-theme="purple.dark" href="~/Content/dx.material.purple.dark.css" data-active="false" />
     <link rel="dx-theme" data-theme="purple.light" href="~/Content/dx.material.purple.light.css" data-active="false" />
+    <link rel="dx-theme" data-theme="teal.light" href="~/Content/dx.material.teal.light.css" data-active="false" />
     <link rel="dx-theme" data-theme="teal.dark" href="~/Content/dx.material.teal.dark.css" data-active="false" />
-    
+    @Scripts.Render("~/Scripts/User/dd_insert_theme_menu.js")
     <!-- DevExtreme scripts must go below the "dx-theme" links -->
 
     @Scripts.Render("~/Scripts/bundle")
@@ -42,8 +43,8 @@
 <body class="dx-datagrid">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+        <div class="container" style="display: flex; justify-content: space-between">
+            <div class="navbar-header" style="display: flex">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -52,13 +53,15 @@
                 </button>
                 <a class="navbar-brand" href="/">DevExMvcApp</a>
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
+            <div id="navbar" class="collapse navbar-collapse" style="display: flex">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li id="home-menu-item" class="active"><a href="/Home">Home</a></li>
+                    <li id="about-menu-item"><a href="/About">About</a></li>
+                    <li id="contact-menu-item"><a href="/Contact">Contact</a></li>
                 </ul>
             </div>
+            <div style="flex-grow:1; text-align:center"></div>
+            <div id="themeDropDownBoxContainer" style="border: 1px"></div>
         </div>
     </nav>
 
